@@ -27,10 +27,10 @@ const Button = () => {
     }
 
     return (
-        <div className='deneme'>
+        <div className='main-container'>
             <div className="data-label">
-                <div className="score-panel"><span className='m-5 text-white-500'>{buttonValue}</span></div>
-                <div className="time-panel"><span className='m-5 text-red-500'>{time}</span></div>
+                <div className="score-panel"><span>Score</span><span className='m-5 text-white-500'>{buttonValue}</span></div>
+                <div className="time-panel"><span>Time</span><span className='m-5 text-red-500'>{time}</span></div>
             </div>
             <div className="button-section">
                 <button
@@ -38,7 +38,7 @@ const Button = () => {
                         setButtonValue(buttonValue + 1);
                         setIsRunning(true)
                     }}
-                    className="bg-red-600 m-4 p-5 value-button border-none"
+                    className="m-4 p-5 score-button border-none"
                 >CLICK</button>
             </div>
         </div >
