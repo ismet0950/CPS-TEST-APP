@@ -23,6 +23,12 @@ const Button = () => {
 
     }, [isRunning]);
 
+    if (time == 10) {
+        setIsRunning(false);
+        setTime(0);
+        setButtonValue(0);
+    }
+
     return (
         <div className='deneme'>
             <button
