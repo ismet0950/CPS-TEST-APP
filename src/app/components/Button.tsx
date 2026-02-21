@@ -6,6 +6,7 @@ const Button = () => {
     const [buttonValue, setButtonValue] = useState(0);
     const [time, setTime] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
+    const [result, setResult] = useState(0);
 
     useEffect(() => {
 
@@ -15,11 +16,18 @@ const Button = () => {
             const timer = setInterval(() => {
                 setTime(prev => prev + 1)
             }, 1000);
+
+            return () => clearInterval(timer);
         }
+
     }, [isRunning]);
 
     if (time == 10) {
         console.log("Time is 10, resetting button value and stopping timer.");
+
+        const score = buttonValue;
+        setResult(score);
+        console.log("Final Score:", score);
 
         setIsRunning(false);
         setTime(0);
@@ -31,6 +39,14 @@ const Button = () => {
             <div className="data-label">
                 <div className="score-panel"><span>Score</span><span className='m-5 text-white-500'>{buttonValue}</span></div>
                 <div className="time-panel"><span>Time</span><span className='m-5 text-red-500'>{time}</span></div>
+                <div className="result-panel"><span>Result</span><span className='m-5 text-red-500'>{result}</span></div>
+                <button
+                    onClick={() => {
+                        setButtonValue(buttonValue + 1);
+                        setIsRunning(true)
+                    }}
+                    className="m-4 p-5 retry-button border-none"
+                >RETRY</button>
             </div>
             <div className="button-section">
                 <button

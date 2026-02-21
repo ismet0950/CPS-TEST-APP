@@ -6,13 +6,6 @@
   /* --foreground: #d09595; */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -33,6 +26,19 @@ main {
 }
 
 .score-panel {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background: #0a0a0a;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 0 10px !important;
+}
+
+.result-panel {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -85,5 +91,13 @@ h1 {
   cursor: pointer;
   &:hover {
     background-color: #0037ff9d;
+  }
+}
+
+.retry-button {
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: green !important;
   }
 }
