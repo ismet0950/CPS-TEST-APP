@@ -16,14 +16,11 @@ const Button = () => {
                 setTime(prev => prev + 1)
             }, 1000);
         }
-        
-        if (time == 10) {
-            
-        }
-
     }, [isRunning]);
 
     if (time == 10) {
+        console.log("Time is 10, resetting button value and stopping timer.");
+
         setIsRunning(false);
         setTime(0);
         setButtonValue(0);
@@ -31,15 +28,19 @@ const Button = () => {
 
     return (
         <div className='deneme'>
-            <button
-                onClick={() => {
-                    setButtonValue(buttonValue + 1);
-                    setIsRunning(true)
-                }}
-                className="bg-red-600 m-4 p-5 value-button border-none"
-            >CLICK</button>
-            <h1>{buttonValue}</h1>
-            <h1 className='m-5 text-red-500'>{time}</h1>
+            <div className="data-label">
+                <div className="score-panel"><span className='m-5 text-white-500'>{buttonValue}</span></div>
+                <div className="time-panel"><span className='m-5 text-red-500'>{time}</span></div>
+            </div>
+            <div className="button-section">
+                <button
+                    onClick={() => {
+                        setButtonValue(buttonValue + 1);
+                        setIsRunning(true)
+                    }}
+                    className="bg-red-600 m-4 p-5 value-button border-none"
+                >CLICK</button>
+            </div>
         </div >
     );
 };
