@@ -129,9 +129,9 @@ h1 {
   margin: 10px !important;
   font-weight: bold !important;
   color: white !important;
-  &:nth-child(2) {
+  /* &:nth-child(2) {
     color: red !important;
-  }
+  } */
 }
 
 .score-button:hover {
